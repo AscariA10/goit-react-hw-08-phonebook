@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 // import { deleteContact } from '../redux/contactSlice';
-import { fetchContacts, deleteContact } from 'redux/operations';
-import { getContacts } from 'redux/selectors';
+import { fetchContacts, deleteContact } from 'redux/contacts/operations';
+import { getContacts } from 'redux/contacts/selectors';
 import { useEffect } from 'react';
 
 import PropTypes from 'prop-types';
@@ -28,7 +28,7 @@ export const ContactList = () => {
          {isLoading && <p>Loading Contacts...</p>}
          {error && <p>{error}</p>}
          <ContactListMarkup>
-            {(filteredList.length > 0 ? filteredList : contactList).map((element, index) => {
+            {(filteredList?.length > 0 ? filteredList : contactList)?.map((element, index) => {
                return (
                   <ContactElement key={index}>
                      {element.name}: {element.phoneNumber}

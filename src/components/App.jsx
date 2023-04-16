@@ -1,24 +1,17 @@
-import { ContactInputForm } from './ContactInputForm/ContactInputForm';
-import { ContactList } from './ContactList/ContactList';
-import { FilterForm } from './FilterForm/FilterForm';
-import { Wrapper } from './App.styled';
-
-import { useDispatch } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { SharedLayout } from 'pages/SharedLayout';
+import { Home } from 'pages/Home';
+import { Register } from 'pages/Register';
+import { LogIn } from 'pages/Login';
 
 export const App = () => {
-   const dispatch = useDispatch();
-
-   useEffect(() => {
-      dispatch(fetchContacts());
-   }, [dispatch]);
-
    return (
-      <Wrapper>
-         <ContactInputForm />
-         <FilterForm />
-         <ContactList />
-      </Wrapper>
+      <Routes>
+         <Route path="/" element={<SharedLayout />}>
+            <Route index element={<Home />} />
+            <Route path="register" element={<Register />} />
+            <Route path="login" element={<LogIn />} />
+         </Route>
+      </Routes>
    );
 };
