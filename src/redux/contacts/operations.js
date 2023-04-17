@@ -22,6 +22,7 @@ export const addContact = createAsyncThunk('contacts/addContact', async (contact
       console.log(data);
       return data;
    } catch (error) {
+      console.log(error);
       return thunkAPI.rejectWithValue(error.message);
    }
 });
