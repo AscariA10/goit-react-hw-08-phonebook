@@ -3,11 +3,11 @@ export function getContacts(state) {
 }
 
 export function getIsLoading(state) {
-   return state.tasks.isLoading;
+   return state.contacts.isLoading;
 }
 
 export function getError(state) {
-   return state.tasks.error;
+   return state.contacts.error;
 }
 
 export function getStatusFilter(state) {
