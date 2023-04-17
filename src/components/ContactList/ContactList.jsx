@@ -30,7 +30,7 @@ export const ContactList = () => {
             {(filteredList?.length > 0 ? filteredList : contactList)?.map((element, index) => {
                return (
                   <ContactElement key={index}>
-                     {element.name}: {element.phoneNumber}
+                     {element.name}: {element.number}
                      <DeleteButton
                         type="button"
                         onClick={() => dispatch(deleteContact(element.id))}
