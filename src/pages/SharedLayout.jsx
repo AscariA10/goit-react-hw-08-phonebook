@@ -7,6 +7,7 @@ export const SharedLayout = () => {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/register">Register</NavLink>
             <NavLink to="/login">Log In</NavLink>
+            <NavLink to="/contacts">Contacts</NavLink>
          </nav>
          <Outlet />
       </>
