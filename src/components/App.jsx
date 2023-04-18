@@ -12,8 +12,6 @@ import { refreshUser } from 'redux/authentification/operations';
 import { RestrictedRoute } from 'pages/RestrictedRoute';
 import { PrivateRoute } from 'pages/PrivateRoute';
 
-import { logOut } from 'redux/authentification/operations';
-
 export const App = () => {
    const dispatch = useDispatch();
    const isRefreshing = useSelector(selectIsRefreshing);
@@ -26,14 +24,6 @@ export const App = () => {
       <b>Refresh Info...</b>
    ) : (
       <>
-         <button
-            type="button"
-            onClick={() => {
-               dispatch(logOut());
-            }}
-         >
-            LogOut
-         </button>
          <Routes>
             <Route path="/" element={<SharedLayout />}>
                <Route index element={<Home />} />
