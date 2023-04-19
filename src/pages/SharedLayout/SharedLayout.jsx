@@ -1,7 +1,9 @@
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { selectIsLoggedIn } from 'redux/authentification/selectors';
 import { useSelector } from 'react-redux';
 import { UserMenu } from 'components/UserMenu/UserMenu';
+
+import { Bar, NavLink } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
    const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -10,14 +12,17 @@ export const SharedLayout = () => {
    return (
       <>
          {isLoggedIn ? (
-            <UserMenu />
+            <Bar>
+               <NavLink to="/contacts">Contacts</NavLink>
+               <UserMenu />
+            </Bar>
          ) : (
-            <nav>
+            <Bar>
                <NavLink to="/">Home</NavLink>
                <NavLink to="/register">Register</NavLink>
                <NavLink to="/login">Log In</NavLink>
                <NavLink to="/contacts">Contacts</NavLink>
-            </nav>
+            </Bar>
          )}
          <Outlet />
       </>

@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import { SharedLayout } from 'pages/SharedLayout';
-import { Home } from 'pages/Home';
-import { Register } from 'pages/Register';
-import { LogIn } from 'pages/Login';
+import { SharedLayout } from 'pages/SharedLayout/SharedLayout';
+import { Home } from 'pages/Home/Home';
+import { Register } from 'pages/Register/Register';
+import { LogIn } from 'pages/LogIn/Login';
 import { ContactsPage } from 'pages/ContactsPage';
 
 import { useDispatch, useSelector } from 'react-redux';

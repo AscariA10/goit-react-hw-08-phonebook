@@ -1,7 +1,9 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik } from 'formik';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/authentification/operations';
+
+import { Form, Field, FieldLabel, FormButton } from './LogIn.styled';
 
 export const LogIn = () => {
    const [email, setEmail] = useState('');
@@ -33,23 +35,29 @@ export const LogIn = () => {
       <Formik>
          <Form onSubmit={onFormSubmit}>
             <h2>Log In Form</h2>
-            <p>Email</p>
-            <Field
-               onChange={onChangeFunction}
-               value={email}
-               type="email"
-               name="email"
-               placeholder="Email"
-            />
-            <p>Password</p>
-            <Field
-               onChange={onChangeFunction}
-               value={password}
-               type="password"
-               name="password"
-               placeholder="Password"
-            />
-            <button type="submit">Submit</button>
+            <FieldLabel>
+               Email
+               <Field
+                  onChange={onChangeFunction}
+                  value={email}
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+               />
+            </FieldLabel>
+
+            <FieldLabel>
+               Password
+               <Field
+                  onChange={onChangeFunction}
+                  value={password}
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+               />
+            </FieldLabel>
+
+            <FormButton type="submit">Submit</FormButton>
          </Form>
       </Formik>
    );

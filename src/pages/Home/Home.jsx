@@ -6,7 +6,13 @@
 // import { useDispatch } from 'react-redux';
 // import { fetchContacts } from 'redux/contacts/operations';
 // import { useEffect } from 'react';
+import { WelcomeWrapper, Welcome } from './Home.styled';
 
 export const Home = () => {
-   return <h1>Hello!</h1>;
+   return (
+      <WelcomeWrapper>
+         <Welcome>Hello!</Welcome>
+         <Welcome>This is a PhoneBookApp</Welcome>
+      </WelcomeWrapper>
+   );
 };

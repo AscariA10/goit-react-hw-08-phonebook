@@ -1,7 +1,9 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik } from 'formik';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from 'redux/authentification/operations';
+
+import { Form, Field, FieldLabel, FormButton } from './Register.styled';
 
 export const Register = () => {
    const [email, setEmail] = useState('');
@@ -44,31 +46,40 @@ export const Register = () => {
       <Formik>
          <Form onSubmit={onFormSubmit}>
             <h2>Register Form</h2>
-            <p>Email</p>
-            <Field
-               onChange={onChangeFunction}
-               value={email}
-               type="email"
-               name="email"
-               placeholder="Email"
-            />
-            <p>Name</p>
-            <Field
-               onChange={onChangeFunction}
-               value={name}
-               type="text"
-               name="name"
-               placeholder="Name"
-            />
-            <p>Password</p>
-            <Field
-               onChange={onChangeFunction}
-               value={password}
-               type="password"
-               name="password"
-               placeholder="Password"
-            />
-            <button type="submit">Submit</button>
+            <FieldLabel>
+               Email
+               <Field
+                  onChange={onChangeFunction}
+                  value={email}
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+               />
+            </FieldLabel>
+
+            <FieldLabel>
+               Name
+               <Field
+                  onChange={onChangeFunction}
+                  value={name}
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+               />
+            </FieldLabel>
+
+            <FieldLabel>
+               Password
+               <Field
+                  onChange={onChangeFunction}
+                  value={password}
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+               />
+            </FieldLabel>
+
+            <FormButton type="submit">Submit</FormButton>
          </Form>
       </Formik>
    );
